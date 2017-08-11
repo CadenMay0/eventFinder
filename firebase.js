@@ -53,3 +53,19 @@
 	$("#table > tbody").append("<tr><td>" + city + "</td><td>" + state + "</td><td>" + zipCode + "</td></tr>");
 
 	});
+
+
+	$("#submit").on("click", function(event) {
+	  	event.preventDefault();
+
+	var postalCode = zipCode;
+	
+	if (postalCode < 99999 && postalCode > 10000) {
+		console.log("Valid Zip Code Entered")
+	}	
+	else {
+		event.preventDefault();
+		$("#table tr:last").remove();
+		console.log("Not a Valid Zip Code");
+	}
+	});
