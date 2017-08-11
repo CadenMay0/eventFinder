@@ -1,0 +1,56 @@
+body {
+    background-color: #FFFFD4;
+    color: #000000;
+}
+
+.jumbotron {
+    text-align: center;
+    background-image: url(../images/concert3.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+    background-position: bottom;
+    min-height: 300px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+}
+
+#eventsHead, #dealsHead, #searchHead {
+    background-color: #3d1112;
+    color: #FBEFD8;
+}
+
+.event:nth-child(even) {
+    background-color: #ab6a58;
+    color: #FBEFD8;
+    font-size: 20px;
+    text-align: center;
+}
+
+.event:nth-child(odd) {
+    background-color: #d5824c;
+    color: #FBEFD8;
+    font-size: 20px;
+    text-align: center;
+}
+
+#eventImg, #eventText {
+    background-color: #fff;
+}
+
+.input-group-addon {
+    background-color: #ab6a58;
+    color: #FBEFD8;
+}
+
+#submit {
+    margin-top: 30%;
+    background-color: #ab6a58;
+    color: #fff;
+}
+
+#fee1b5
+#fcbd87
+#d5824c
+#ab6a58
+#883b27
+#3d1112
