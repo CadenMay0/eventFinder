@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href= "style_css.css">
+    <link rel="stylesheet" href="style_css.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script
+     src="http://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body> 
     <div class="container">
@@ -38,13 +42,27 @@
                             </div>
                         </div>
                         <br/>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="basic-addon1">Zip Code</span>
-                            <input type="text" class="form-control" aria-describedby="basic-addon1" id="zip-input" maxlength="5">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">Zip Code</span>
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="zip-input">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">2
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" id="radius">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <br/>
                         <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-default" id="submit" data-dismiss="alert">Submit</button>
+                            <button type="button" class="btn btn-default" id="submit">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -56,22 +74,7 @@
                     <div class="panel-heading" id="eventsHead">
                         <h3 class="panel-title">Upcoming Events</h3>
                     </div>
-                    <table class="table">
-                        <tr class="event">
-                            <td class="col-md-2" id="eventDate">AUG<br/>10</td>
-                            <td class="col-md-2" id="eventImg"></td>
-                            <td class="col-md-8" id="eventText"></td>
-                        </tr>
-                        <tr class="event">
-                            <td class="col-md-2" id="eventDate">AUG<br/>10</td>
-                            <td class="col-md-2" id="eventImg"></td>
-                            <td class="col-md-8" id="eventText"></td>
-                        </tr>
-                        <tr class="event">
-                            <td class="col-md-2" id="eventDate">AUG<br/>10</td>
-                            <td class="col-md-2" id="eventImg"></td>
-                            <td class="col-md-8" id="eventText"></td>
-                        </tr>
+                    <table class="table" id="eventsTBL">
                     </table>
                 </div>
             </div>
@@ -80,38 +83,41 @@
                     <div class="panel-heading"  id="dealsHead">
                         <h3 class="panel-title">Deals</h3>
                     </div>
-                    <table class="table">
+                    <table class="table" id="dealsTBL">
                         <tr id="deals">
                             <td id="dealsDate"></td>
                             <td id="dealsImg"></td>
                             <td id="dealsText"></td>
                         </tr>
                     </table>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" id="recentHead">
-                    <h3 class="panel-title">Recent Searches</h3>
-                </div>
-                <div class="panel-body" style="color: black">
-                   <table class="table table-hover" id="table">
+                </div><!--Deals panel-->
+            </div><!--deals column-->
+        </div><!--Events and Deals Row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="recentHead">
+                        <h3 class="panel-title">Recent Searches</h3>
+                    </div>
+                    <table class="table table-hover" id="recentTable">
                         <thead>
                             <th>City</th>
                             <th>State</th>
                             <th>Zip Code</th>
                         </thead>
                         <tbody>
+                            <!--body created in firebase.js-->
                         </tbody>
-                   </table>
-                   <div id="remove"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </table>
+                    <div id="remove"></div>
+                </div><!--panel-->
+            </div><!--Recent Searches column-->
+        </div><!--Recent Searches row-->
+    </div><!--container-->
 
-<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-<script src="firebase.js">
-    
-</script>
+    <script src="eventFinder.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="firebase.js"></script>
+
 </body>
 </html>
