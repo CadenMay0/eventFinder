@@ -54,3 +54,8 @@ body {
 #ab6a58
 #883b27
 #3d1112
+
+#alert {
+    text-align: center;
+    color: red;
+}

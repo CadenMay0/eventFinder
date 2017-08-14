@@ -31,13 +31,15 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">City</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input" 
+                                    onkeyup="checkCity(this)">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">State</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input" 
+                                    onkeyup="checkState(this)">
                                 </div>
                             </div>
                         </div>
@@ -46,8 +48,10 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">Zip Code</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="zip-input">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" maxlength="5" id="zip-input" 
+                                    onkeyup="checkZip(this)">
                                 </div>
+                                <strong><div id="alert" style="color: red"></div></strong>
                             </div>
                             <div class="col-md-6">
                                 <div class="dropdown">
@@ -61,9 +65,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default" id="submit">Submit</button>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

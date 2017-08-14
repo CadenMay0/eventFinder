@@ -55,16 +55,42 @@
 	});
 
 
-	$("#submit").on("click", function(event) {
-	  	event.preventDefault();
-	
-	if (zipCode < 99999 && zipCode > 10000) {
-		console.log("Valid Zip Code Entered: " + zipCode);
-	}	
-	else {
-		event.preventDefault();
-		$("#table tr:last").remove();
-		$("#myModal").modal('show');
-		console.log("Not a Valid Zip Code: " + zipCode);
+	//if (zipCode < 99999 && zipCode > 10000) {
+	//	console.log("Valid Zip Code Entered: " + zipCode);
+	//}	
+	//else {
+	//	event.preventDefault();
+	//	$("#table tr:last").remove();
+		//$("#myModal").modal('show');
+	//	console.log("Not a Valid Zip Code: " + zipCode);
+
+	function checkCity(input) {
+		var regex = /[^a-z ]/gi;
+		input.value = input.value.replace(regex, "");
 	}
-	});
+
+	function checkState(input) {
+		regex = /[^a-z ]/gi;
+		input.value = input.value.replace(regex, "");
+	}
+
+	function checkZip(input) {
+        regex = /[^0-9]/g;
+        input.value = input.value.replace(regex, "");
+    }
+
+    $("#submit").on("click", function() {
+    	
+    	var zipLength = zipCode.length;
+    	if (zipLength === 5) {
+    		console.log("Valid zip code: " + zipCode);
+    	}
+    	else{
+    		event.preventDefault();
+    		$("#recentTable tr:last").remove();
+    		$("#alert").html(zipCode + " is not a valid zip code.");
+    	}
+
+    });
+
+
