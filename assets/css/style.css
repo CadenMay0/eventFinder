@@ -71,7 +71,7 @@ table tr a {
     color: #3d1112;
 }
 
-table tr:hover {
+#eventsTBL tr:hover, #dealsTBL tr:hover, #recentTBL tr:hover {
     background-color: #ab6a58;
     color: #FBEFD8;
 }

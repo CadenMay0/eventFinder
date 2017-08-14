@@ -18,25 +18,20 @@
 	  	event.preventDefault();
 
 	//Add id for the location that the user enters
-	  	var city = $("#city-input").val().trim();
-	  	var state = $("#state-input").val().trim();
-	  	var zipCode = $("#zip-input").val().trim();
-	  	var radius = $("#radius").val().trim();
+	  	//var city = $("#city-input").val().trim();
+	  	//var state = $("#state-input").val().trim();
+	  	//var zipCode = $("#zip-input").val().trim();
+	  	//var radius = $("#radius").val().trim();
 
-	  	var userSearch = {
-	  		city: city,
-	  		state: state,
-	  		zipCode: zipCode,
-	  		radius: radius
-	  	};
+
 
 	  	var validZip = true;
 	  	var zipLength = zipCode.length;
 	  	if (zipLength === 5) {
 	  		$("#alert").empty();
-	  		dataRef.ref().push(userSearch);
 	  		console.log("Valid zip code: " + zipCode);
-	  		sqoot();
+            sqoot();
+            dataRef.ref().push(userSearch);
 	  		//Clear text input values
 	  		  	$("#city-input").val("");
 	  		  	$("#state-input").val("");
