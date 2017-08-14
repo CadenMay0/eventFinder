@@ -29,11 +29,6 @@
 	  		zipCode: zipCode,
 	  		radius: radius
 	  	};
-	//Firebase watcher and initial loader
-	  	console.log(userSearch.city);
-	  	console.log(userSearch.state);
-	  	console.log(userSearch.zipCode);
-	  	console.log(userSearch.radius);
 
 	  	var validZip = true;
 	  	var zipLength = zipCode.length;
@@ -80,7 +75,7 @@
 	console.log(radius);
 
 	//Append user input data to the recent searches table.
-	$("#recentTable > tbody").append("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
+	$("#recentTable > tbody").prepend("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
 		//Append zip code to zip-input and submit the form.
 
 	});
