@@ -14,7 +14,7 @@ body {
     font-size: 60px;
 }
 
-#eventsHead, #dealsHead, #searchHead, #recentHead {
+#eventsHead, #dealsHead, #searchHead {
     background-color: #fcbd87;
     color: #3d1112;
 }
@@ -26,6 +26,10 @@ body {
 
 .input-group-addon {
     color: #3d1112;
+}
+
+.input-group {
+    margin-bottom: 25px;
 }
 
 #submit {
@@ -58,12 +62,24 @@ table tr {
     font-size: 17px;
     text-align: center;
     text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-family: 'Oswald', sans-serif;
 }
 
-#alert {
-    color: red;
+table tr a {
+    color: #3d1112;
 }
 
+table tr:hover {
+    background-color: #ab6a58;
+    color: #FBEFD8;
+}
+
+table tr:hover a {
+    text-decoration: none;
+    color: #FBEFD8;
+}
 
 #fee1b5
 #fcbd87

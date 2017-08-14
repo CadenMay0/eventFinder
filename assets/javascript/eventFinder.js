@@ -36,7 +36,7 @@ function sqoot() {
             colIMG.addClass("col-md-2");
             colInf.addClass("col-md-10");
             colIMG.html("<img src='" + results[d].deal.image_url + "'/>");
-            colInf.html("<p>" + results[d].deal.title + "</p><a href='" + results[d].deal.url + "'>Click Here for Details</a>");
+            colInf.html("<a href='" + results[d].deal.url + "'>" + results[d].deal.title + "</a>");
             colIMG.appendTo(newTBL);
             colInf.appendTo(newTBL);
             newTBL.appendTo("#dealsTBL");
@@ -50,7 +50,7 @@ function sqoot() {
 }
 
 function meetups() {
-    var meetURL = "https://api.meetup.com/find/events?&sign=true&key=" + meetKey + "&photo-host=public&lon=" + long + "&lat=" + lati + "&page=1&radius=5" //+ radi;
+    var meetURL = "https://api.meetup.com/find/events?&sign=true&key=" + meetKey + "&photo-host=public&lon=" + long + "&lat=" + lati + "&page=1&radius=" + radi;
     $.ajax({
         url: meetURL,
         method: "GET",
@@ -67,7 +67,7 @@ function meetups() {
             colDate.addClass("col-md-2");
             colTxt.addClass("col-md-10");
             colDate.html("<p>" + month + "</p><p>" + day + "</p>");
-            colTxt.html("<p>" + response.data[i].name + "</p><a href ='" + response.data[i].link + "'>Click Here for Details</a>");
+            colTxt.html("<a href ='" + response.data[i].link + "'>"+ response.data[i].name +"</a>");
             colDate.appendTo(newDiv);
             colTxt.appendTo(newDiv);
             newDiv.appendTo("#eventsTBL");
