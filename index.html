@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style_css.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <script
      src="http://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.1.1/bloodhound.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
 </head>
 <body> 
     <div class="container">
@@ -31,44 +33,35 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">City</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input" 
-                                    onkeyup="checkCity(this)">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">State</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input" 
-                                    onkeyup="checkState(this)">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input">
                                 </div>
                             </div>
                         </div>
                         <br/>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="input-group">
+                                <div class="input-group" id="prefetch">
                                     <span class="input-group-addon" id="basic-addon1">Zip Code</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" maxlength="5" id="zip-input" 
-                                    onkeyup="checkZip(this)">
+                                    <input type="text" class="form-control typeahead" placeholder="Zipcode" aria-describedby="basic-addon1" id="zip-input">
                                 </div>
-                                <strong><div id="alert" style="color: red"></div></strong>
                             </div>
                             <div class="col-md-6">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">2
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu" id="radius">
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                    </ul>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Radius</span>
+                                  <input type="text" class="form-control" aria-label="miles" id="radius">
+                                  <span class="input-group-addon">miles</span>
                                 </div>
                             </div>
                         </div>
-
                         <div class="btn-group" role="group" aria-label="...">
                             <button type="button" class="btn btn-default" id="submit">Submit</button>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,8 +72,10 @@
                     <div class="panel-heading" id="eventsHead">
                         <h3 class="panel-title">Upcoming Events</h3>
                     </div>
-                    <table class="table" id="eventsTBL">
-                    </table>
+                    <div class="scrollingTable">
+                        <table class="table" id="eventsTBL">
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -88,41 +83,15 @@
                     <div class="panel-heading"  id="dealsHead">
                         <h3 class="panel-title">Deals</h3>
                     </div>
-                    <table class="table" id="dealsTBL">
-                        <tr id="deals">
-                            <td id="dealsDate"></td>
-                            <td id="dealsImg"></td>
-                            <td id="dealsText"></td>
-                        </tr>
-                    </table>
-                </div><!--Deals panel-->
-            </div><!--deals column-->
-        </div><!--Events and Deals Row-->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading" id="recentHead">
-                        <h3 class="panel-title">Recent Searches</h3>
+                    <div class="scrollingTable">
+                        <table class="table" id="dealsTBL">
+                        </table>
                     </div>
-                    <table class="table table-hover" id="recentTable">
-                        <thead>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Zip Code</th>
-                        </thead>
-                        <tbody>
-                            <!--body created in firebase.js-->
-                        </tbody>
-                    </table>
-                    <div id="remove"></div>
-                </div><!--panel-->
-            </div><!--Recent Searches column-->
-        </div><!--Recent Searches row-->
-    </div><!--container-->
-
-    <script src="eventFinder.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="firebase.js"></script>
-
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/javascript/eventFinder.js"></script>
+    <script src="./assets/javascript/prefetch.js"></script>
 </body>
 </html>
