@@ -12,6 +12,9 @@ var radi = "";
 
 var long = "";
 var lati = "";
+var city = "";
+var state = "";
+var userSearch = {};
 
 $("#submit").on("click", function () {
     zipCode = $("#zip-input").val();
@@ -28,6 +31,15 @@ function sqoot() {
         var query = response.query;
         long = query.location.longitude;
         lati = query.location.latitude;
+        city = query.location.locality;
+        state = query.location.region;
+        zipCode = query.location.postal_code;
+        userSearch = {
+            city: city,
+            state: state,
+            zipCode: zipCode,
+            radius: radi
+        };
         for (var d = 0; d < results.length; d++) {
             var newTBL = $("<tr class='tRow'>");
             newTBL.addClass("deal");
