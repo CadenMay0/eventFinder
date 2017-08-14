@@ -14,7 +14,7 @@ body {
     font-size: 60px;
 }
 
-#eventsHead, #dealsHead, #searchHead {
+#eventsHead, #dealsHead, #searchHead, #recentHead {
     background-color: #fcbd87;
     color: #3d1112;
 }
@@ -58,6 +58,10 @@ table tr {
     font-size: 17px;
     text-align: center;
     text-transform: uppercase;
+}
+
+#alert {
+    color: red;
 }
 
 

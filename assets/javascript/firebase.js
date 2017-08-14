@@ -21,16 +21,19 @@
 	  	var city = $("#city-input").val().trim();
 	  	var state = $("#state-input").val().trim();
 	  	var zipCode = $("#zip-input").val().trim();
+	  	var radius = $("#radius").val().trim();
 
 	  	var userSearch = {
 	  		city: city,
 	  		state: state,
-	  		zipCode: zipCode
+	  		zipCode: zipCode,
+	  		radius: radius
 	  	};
 	//Firebase watcher and initial loader
 	  	console.log(userSearch.city);
 	  	console.log(userSearch.state);
 	  	console.log(userSearch.zipCode);
+	  	console.log(userSearch.radius);
 
 	  	var validZip = true;
 	  	var zipLength = zipCode.length;
@@ -67,13 +70,15 @@
 	city = childSnapshot.val().city;
 	state = childSnapshot.val().state;
 	zipCode = childSnapshot.val().zipCode;
+	radius = childSnapshot.val().radius;
 
 	console.log(city);
 	console.log(state);
 	console.log(zipCode);
+	console.log(radius);
 
 	//Append user input data to the recent searches table.
-	$("#recentTable > tbody").append("<tr><td id='cityData'>" + city + "</td><td id='stateData'>" + state + "</td><td id='zipData'>" + zipCode + "</td></tr>");
+	$("#recentTable > tbody").append("<tr><td id='cityData'>" + city + "</td><td id='stateData'>" + state + "</td><td id='zipData'>" + zipCode + "</td><td id='radiusData'>" + radius + " miles</td></tr>");
 		//Append zip code to zip-input and submit the form.
 		//$("#zipData").on("click", function() {	
 		//	var zipInput = $("#zip-input");
@@ -97,3 +102,8 @@
 		  	regex = /[^0-9]/g;
 		  	input.value = input.value.replace(regex, "");
 	  	}	  	
+
+	  	function checkRadius (input) {
+	  		regex = /[^0-9]/g;
+	  		input.value = input.value.replace(regex, "");
+	  	}	 

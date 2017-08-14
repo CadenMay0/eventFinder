@@ -48,15 +48,14 @@
                             <div class="col-md-6">
                                 <div class="input-group" id="prefetch">
                                     <span class="input-group-addon" id="basic-addon1">Zip Code</span>
-                                    <input type="text" class="form-control typeahead" placeholder="Zipcode" aria-describedby="basic-addon1" id="zip-input" maxlength="5" onkeyup="checkZip(this)">
-                                    <input type="text" class="form-control typeahead" placeholder="Zip Code" aria-describedby="basic-addon1" id="zip-input">
+                                    <input type="text" class="form-control typeahead" placeholder="Zip Code" aria-describedby="basic-addon1" id="zip-input" maxlength="5" onkeyup="checkZip(this)">
                                 </div>
                                 <strong><div id="alert" style="color: red"></div></strong>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
                                   <span class="input-group-addon">Radius</span>
-                                  <input type="text" class="form-control" aria-label="miles" id="radius">
+                                  <input type="text" class="form-control" aria-label="miles" id="radius" onkeyup="checkRadius(this)">
                                   <span class="input-group-addon">miles</span>
                                 </div>
                             </div>
@@ -102,6 +101,7 @@
                             <th>City</th>
                             <th>State</th>
                             <th>Zip Code</th>
+                            <th>Radius</th>
                         </thead>
                         <tbody></tbody>
                     </table>
