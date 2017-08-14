@@ -29,7 +29,7 @@ function sqoot() {
         long = query.location.longitude;
         lati = query.location.latitude;
         for (var d = 0; d < results.length; d++) {
-            var newTBL = $("<tr>");
+            var newTBL = $("<tr class='tRow'>");
             newTBL.addClass("deal");
             var colIMG = $("<td>");
             var colInf = $("<td>");
@@ -58,7 +58,7 @@ function meetups() {
     }).done(function (response) {
         console.log(response);
         for (var i = 0; i < response.data.length; i++) {
-            var newDiv = $("<tr>");
+            var newDiv = $("<tr class='tRow'>");
             newDiv.addClass("event");
             var month = moment(response.data[i].time).format("MMM");
             var day = moment(response.data[i].time).format("DD");

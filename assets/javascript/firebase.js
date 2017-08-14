@@ -46,17 +46,19 @@
 	  		  	$("#city-input").val("");
 	  		  	$("#state-input").val("");
 	  		  	$("#zip-input").val("");
+	  		  	$("#radius").val("");
 	  		return true;
 	  	}
 	  	//If zip code is not 5 characters, remove value from the table/ alert user zip code is not valid.
 	  	else{
 	  		event.preventDefault();
-	  		$("#alert").html(zipCode + " is not a valid zip code.");
+	  		$("#alert").html("* " + zipCode + " IS NOT A VALID ZIP CODE.");
 	  		console.log(zipCode + " is not a valid zip code.")
 	  		//Clear text input values
 	  		  	$("#city-input").val("");
 	  		  	$("#state-input").val("");
 	  		  	$("#zip-input").val("");
+	  		  	$("#radius").val("");
 	  		return false;
 	  	}	
 
@@ -78,12 +80,9 @@
 	console.log(radius);
 
 	//Append user input data to the recent searches table.
-	$("#recentTable > tbody").append("<tr><td id='cityData'>" + city + "</td><td id='stateData'>" + state + "</td><td id='zipData'>" + zipCode + "</td><td id='radiusData'>" + radius + " miles</td></tr>");
+	$("#recentTable > tbody").append("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
 		//Append zip code to zip-input and submit the form.
-		//$("#zipData").on("click", function() {	
-		//	var zipInput = $("#zip-input");
-			//$("#zipData").val().append(zipInput);
-		//});
+
 	});
 	  	//Regular expression checking city input for invalid characters.
 	  	function checkCity(input) {
