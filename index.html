@@ -33,13 +33,13 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">City</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="city-input" onkeyup="checkCity(this)">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">State</span>
-                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon1" id="state-input" onkeyup="checkState(this)">
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,9 @@
                             <div class="col-md-6">
                                 <div class="input-group" id="prefetch">
                                     <span class="input-group-addon" id="basic-addon1">Zip Code</span>
-                                    <input type="text" class="form-control typeahead" placeholder="Zipcode" aria-describedby="basic-addon1" id="zip-input">
+                                    <input type="text" class="form-control typeahead" placeholder="Zipcode" aria-describedby="basic-addon1" id="zip-input" maxlength="5" onkeyup="checkZip(this)">
                                 </div>
+                                <strong><div id="alert" style="color: red"></div></strong>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group">
@@ -90,8 +91,27 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="recentHead">
+                    <h3 class="panel-title">Recent Searches</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover" id="recentTable">
+                        <thead>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip Code</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./assets/javascript/eventFinder.js"></script>
     <script src="./assets/javascript/prefetch.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="./assets/javascript/firebase.js"></script>
 </body>
 </html>
