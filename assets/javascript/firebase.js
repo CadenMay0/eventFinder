@@ -30,8 +30,10 @@
 	  	if (zipLength === 5) {
 	  		$("#alert").empty();
 	  		console.log("Valid zip code: " + zipCode);
-            sqoot();
-            dataRef.ref().push(userSearch);
+            sqoot(function () {
+                dataRef.ref().push(userSearch);
+            });
+            
 	  		//Clear text input values
 	  		  	$("#city-input").val("");
 	  		  	$("#state-input").val("");
