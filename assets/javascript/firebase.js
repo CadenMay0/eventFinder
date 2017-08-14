@@ -76,7 +76,6 @@
 
 	//Append user input data to the recent searches table.
 	$("#recentTable > tbody").prepend("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
-		//Append zip code to zip-input and submit the form.
 
 	});
 	  	//Regular expression checking city input for invalid characters.
