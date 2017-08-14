@@ -16,9 +16,6 @@ var lati = "";
 $("#submit").on("click", function () {
     zipCode = $("#zip-input").val();
     radi = $('#radius').val();
-    console.log(zipCode);
-    console.log(radi);
-    sqoot();
 
 })
 function sqoot() {
@@ -29,9 +26,6 @@ function sqoot() {
     }).done(function (response) {
         var results = response.deals;
         var query = response.query;
-        console.log(response);
-        //console.log(query);
-        //console.log(results);
         long = query.location.longitude;
         lati = query.location.latitude;
         for (var d = 0; d < results.length; d++) {
@@ -68,7 +62,6 @@ function meetups() {
             newDiv.addClass("event");
             var month = moment(response.data[i].time).format("MMM");
             var day = moment(response.data[i].time).format("DD");
-            console.log(month);
             var colDate = $("<td>");
             var colTxt = $("<td>");
             colDate.addClass("col-md-2");
