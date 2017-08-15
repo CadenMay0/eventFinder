@@ -16,12 +16,12 @@ var city = "";
 var state = "";
 var userSearch = {};
 
-$("#submit").on("click", function () {
+$("#submit").on("click", function (event) {
     zipCode = $("#zip-input").val();
     radi = $('#radius').val();
 
 })
-function sqoot() {
+function sqoot(done) {
     var sqootUrl = "http://api.sqoot.com/v2/deals?api_key=" + sqootApi + "&location=" + zipCode + "&page=1";
     $.ajax({
         url: sqootUrl,
@@ -40,6 +40,7 @@ function sqoot() {
             zipCode: zipCode,
             radius: radi
         };
+        done();
         for (var d = 0; d < results.length; d++) {
             var newTBL = $("<tr class='tRow'>");
             newTBL.addClass("deal");
