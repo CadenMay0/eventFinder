@@ -15,6 +15,13 @@
 		$("#state-input").text(state);
 		$("#zip-input").text(zipCode);
 		$("#radius").text(radi);
+
+		$("#city-input").submit();
+		$("#state-input").submit();
+		$("#zip-input").submit();
+		$("#radius").submit();
+
+
 	
 	});
 
