@@ -1,11 +1,19 @@
+  //When the page loads, that users last search will appear in eventsTBL and dealsTBL	
   	$(document).ready(function() {
 
-  		$("#city-input").text(localStorage.getItem("city"));
-  		$("#state-input").text(localStorage.getItem("state"));
-  		$("#zip-input").text(localStorage.getItem("zipCode"));
-  		$("#radius").text(localStorage.getItem("radius"));
+  		var localCity = $("#city-input").text(localStorage.getItem("city"));
+  		var localState = $("#state-input").text(localStorage.getItem("state"));
+  		var localZip = $("#zip-input").text(localStorage.getItem("zipCode"));
+  		var localRadius = $("#radius").text(localStorage.getItem("radius"));
+
+  		console.log(localCity);
+  		console.log(localState);
+  		console.log(localZip);
+  		console.log(localRadius);
+
 		
 	});
+
   //Initialize firebase
   var config = {
     apiKey: "AIzaSyBhXlVx_h3lQufs0t13aevXF7wF8jBa_x0",
@@ -106,6 +114,7 @@
 		  	input.value = input.value.replace(regex, "");
 	  	}	  	
 
+	  	//Regex checking radius for illegal characters.
 	  	function checkRadius (input) {
 	  		regex = /[^0-9]/g;
 	  		input.value = input.value.replace(regex, "");
