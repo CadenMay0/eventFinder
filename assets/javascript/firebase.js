@@ -28,7 +28,10 @@
 
   //Create a variable to reference the database
   var dataRef = firebase.database();
-
+  var stateSTR = " ";
+  var citySTR = " ";
+  var zipSTR = " ";
+  var radiusSTR = " ";
 //Add id for submit button.
 	$("#submit").on("click", function(event) {
 	  	event.preventDefault();
@@ -99,7 +102,12 @@
 	  	//Regular expression checking city input for invalid characters.
 	  	function checkCity(input) {
 	  		var regex = /[^a-z ]/gi;
-	  		input.value = input.value.replace(regex, "");
+                input.value = input.value.replace(regex, "");
+                citySTR = citySTR + input;
+                dataRef.ref().child('city')
+                    .startAt(citySTR)
+                    .endAt(citySTR + '\uf8ff')
+                    .limit(10)
 	  	}
 
 	  	//Regular expression checking state input for invalid characters.
