@@ -1,3 +1,11 @@
+  	$(document).ready(function() {
+
+  		$("#city-input").text(localStorage.getItem("city"));
+  		$("#state-input").text(localStorage.getItem("state"));
+  		$("#zip-input").text(localStorage.getItem("zipCode"));
+  		$("#radius").text(localStorage.getItem("radius"));
+		
+	});
   //Initialize firebase
   var config = {
     apiKey: "AIzaSyBhXlVx_h3lQufs0t13aevXF7wF8jBa_x0",
@@ -16,14 +24,6 @@
 //Add id for submit button.
 	$("#submit").on("click", function(event) {
 	  	event.preventDefault();
-
-	//Add id for the location that the user enters
-	  	//var city = $("#city-input").val().trim();
-	  	//var state = $("#state-input").val().trim();
-	  	//var zipCode = $("#zip-input").val().trim();
-	  	//var radius = $("#radius").val().trim();
-
-
 
 	  	var validZip = true;
 	  	var zipLength = zipCode.length;
@@ -71,12 +71,17 @@
 	console.log(zipCode);
 	console.log(radius);
 
+	//Clear local storage
 	localStorage.clear();
-	
+
+
+	//Sets local storage to the last value entered by the user.
 	localStorage.setItem("city", city);
 	localStorage.setItem("state", state);
 	localStorage.setItem("zipCode", zipCode);
 	localStorage.setItem("radius", radius);
+	
+
 	//Append user input data to the recent searches table.
 	$("#recentTable > tbody").prepend("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
 
