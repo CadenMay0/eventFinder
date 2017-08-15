@@ -53,7 +53,7 @@ img {
     height: 48.8px;
 }
 
-.tRow {
+#dealsRow, #eventsRow {
     height: 90px;
     word-wrap: break-word;
 }

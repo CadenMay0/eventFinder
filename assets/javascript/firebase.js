@@ -6,11 +6,15 @@
 		zipCode = (localStorage.getItem("zipCode", zipCode));
 		radi = (localStorage.getItem("radius", radius));
 
-		console.log("Local Storage: ");
 		console.log(city);
 		console.log(state);
 		console.log(zipCode);
 		console.log(radi);
+
+		$("#city-input").text(city);
+		$("#state-input").text(state);
+		$("#zip-input").text(zipCode);
+		$("#radius").text(radi);
 	
 	});
 
@@ -36,9 +40,10 @@
 	$("#submit").on("click", function(event) {
 	  	event.preventDefault();
 
-	  	var validZip = true;
+	  	//var validZip = true;
 	  	var zipLength = zipCode.length;
-	  	if (zipLength === 5) {
+	  	var radiusLength = radi.length;
+	  	if ((zipLength === 5) && (radiusLength !== 0)) {
 	  		$("#alert").empty();
 	  		console.log("Valid zip code: " + zipCode);
             sqoot(function () {
@@ -55,8 +60,7 @@
 	  	//If zip code is not 5 characters, remove value from the table/ alert user zip code is not valid.
 	  	else{
 	  		event.preventDefault();
-	  		$("#alert").html("* " + zipCode + " IS NOT A VALID ZIP CODE.");
-	  		console.log(zipCode + " is not a valid zip code.")
+	  		$("#alert").html("* PLEASE ENTER A VALID ZIP CODE AND RADIUS.");
 	  		//Clear text input values
 	  		  	$("#city-input").val("");
 	  		  	$("#state-input").val("");
@@ -64,7 +68,6 @@
 	  		  	$("#radius").val("");
 	  		return false;
 	  	}	
-
  
 	});//submit button function
 
@@ -92,7 +95,6 @@
 	localStorage.setItem("zipCode", zipCode);
 	localStorage.setItem("radius", radius);
 	
-
 	//Append user input data to the recent searches table.
 	$("#recentTable > tbody").prepend("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
 
