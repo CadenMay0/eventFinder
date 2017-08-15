@@ -1,29 +1,3 @@
-  //When the page loads, that users last search will appear in eventsTBL and dealsTBL	
-  	$(document).ready(function() {
-
-		city = (localStorage.getItem("city", city));
-		state = (localStorage.getItem("state", state));
-		zipCode = (localStorage.getItem("zipCode", zipCode));
-		radi = (localStorage.getItem("radius", radius));
-
-		console.log(city);
-		console.log(state);
-		console.log(zipCode);
-		console.log(radi);
-
-		$("#city-input").text(city);
-		$("#state-input").text(state);
-		$("#zip-input").text(zipCode);
-		$("#radius").text(radi);
-
-		$("#city-input").submit();
-		$("#state-input").submit();
-		$("#zip-input").submit();
-		$("#radius").submit();
-
-
-	
-	});
 
   //Initialize firebase
   var config = {
@@ -37,12 +11,7 @@
 
   firebase.initializeApp(config);
 
-  //Create a variable to reference the database
-  var dataRef = firebase.database();
-  var stateSTR = " ";
-  var citySTR = " ";
-  var zipSTR = " ";
-  var radiusSTR = " ";
+
 //Add id for submit button.
 	$("#submit").on("click", function(event) {
 	  	event.preventDefault();
@@ -80,17 +49,10 @@
 
 	dataRef.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-	console.log(childSnapshot.val());
-
 	city = childSnapshot.val().city;
 	state = childSnapshot.val().state;
 	zipCode = childSnapshot.val().zipCode;
 	radius = childSnapshot.val().radius;
-
-	console.log(city);
-	console.log(state);
-	console.log(zipCode);
-	console.log(radius);
 
 	//Clear local storage
 	localStorage.clear();
@@ -112,11 +74,7 @@
 	  	function checkCity(input) {
 	  		var regex = /[^a-z ]/gi;
                 input.value = input.value.replace(regex, "");
-                //citySTR = citySTR + input;
-                //dataRef.ref().child('city')
-                 //   .startAt(citySTR)
-                 //   .endAt(citySTR + '\uf8ff')
-                 //   .limit(10)
+
 	  	}
 
 	  	//Regular expression checking state input for invalid characters.
