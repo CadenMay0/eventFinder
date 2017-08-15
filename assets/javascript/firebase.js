@@ -71,10 +71,18 @@
 	console.log(zipCode);
 	console.log(radius);
 
+	localStorage.clear();
+	
+	localStorage.setItem("city", city);
+	localStorage.setItem("state", state);
+	localStorage.setItem("zipCode", zipCode);
+	localStorage.setItem("radius", radius);
 	//Append user input data to the recent searches table.
 	$("#recentTable > tbody").prepend("<tr><td class='cityData'>" + city + "</td><td class='stateData'>" + state + "</td><td class='zipData'>" + zipCode + "</td><td class='radiusData'>" + radius + "</td></tr>");
 
 	});
+
+
 	  	//Regular expression checking city input for invalid characters.
 	  	function checkCity(input) {
 	  		var regex = /[^a-z ]/gi;
@@ -97,3 +105,5 @@
 	  		regex = /[^0-9]/g;
 	  		input.value = input.value.replace(regex, "");
 	  	}	 
+
+
