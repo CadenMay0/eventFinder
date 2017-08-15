@@ -1,17 +1,17 @@
   //When the page loads, that users last search will appear in eventsTBL and dealsTBL	
   	$(document).ready(function() {
 
-  		var localCity = $("#city-input").text(localStorage.getItem("city"));
-  		var localState = $("#state-input").text(localStorage.getItem("state"));
-  		var localZip = $("#zip-input").text(localStorage.getItem("zipCode"));
-  		var localRadius = $("#radius").text(localStorage.getItem("radius"));
+		city = (localStorage.getItem("city", city));
+		state = (localStorage.getItem("state", state));
+		zipCode = (localStorage.getItem("zipCode", zipCode));
+		radi = (localStorage.getItem("radius", radius));
 
-  		console.log(localCity);
-  		console.log(localState);
-  		console.log(localZip);
-  		console.log(localRadius);
-
-		
+		console.log("Local Storage: ");
+		console.log(city);
+		console.log(state);
+		console.log(zipCode);
+		console.log(radi);
+	
 	});
 
   //Initialize firebase
@@ -103,11 +103,11 @@
 	  	function checkCity(input) {
 	  		var regex = /[^a-z ]/gi;
                 input.value = input.value.replace(regex, "");
-                citySTR = citySTR + input;
-                dataRef.ref().child('city')
-                    .startAt(citySTR)
-                    .endAt(citySTR + '\uf8ff')
-                    .limit(10)
+                //citySTR = citySTR + input;
+                //dataRef.ref().child('city')
+                 //   .startAt(citySTR)
+                 //   .endAt(citySTR + '\uf8ff')
+                 //   .limit(10)
 	  	}
 
 	  	//Regular expression checking state input for invalid characters.
