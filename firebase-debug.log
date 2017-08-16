@@ -1,0 +1,61 @@
+[debug] [2017-08-16T00:06:03.055Z] ----------------------------------------------------------------------
+[debug] [2017-08-16T00:06:03.119Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2017-08-16T00:06:03.121Z] CLI Version:   3.9.2
+[debug] [2017-08-16T00:06:03.121Z] Platform:      win32
+[debug] [2017-08-16T00:06:03.121Z] Node Version:  v6.11.0
+[debug] [2017-08-16T00:06:03.128Z] Time:          Tue Aug 15 2017 20:06:03 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-16T00:06:03.128Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-16T00:06:03.250Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2017-08-16T00:06:03.252Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\BrianMartin\Desktop\code\class-projects\week_4\eventFinder
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2017-08-16T00:06:33.991Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-16T00:06:33.992Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/2rIrjm9CVWCBdvxX52rHEUn-QcBbETd9RO9LWJCkGsIP273h22NvmLeheVb7xGPE',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Aug 15 2017 20:06:33 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-16T00:06:34.571Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-16T00:06:34.622Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ Tue Aug 15 2017 20:06:34 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-16T00:06:35.949Z] <<< HTTP RESPONSE 200
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2017-08-16T00:10:58.340Z] >>> HTTP REQUEST GET https://eventfinder-87f63.firebaseio.com/.settings/rules.json  
+ Tue Aug 15 2017 20:10:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-16T00:10:58.787Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-16T00:10:59.094Z] Error: ENOENT: no such file or directory, open 'C:\Users\BrianMartin\Desktop\code\class-projects\week_4\eventFinder\eventFinder <eventfinder-87f63>'
+    at Error (native)
+    at Object.fs.openSync (fs.js:641:18)
+    at Object.fs.writeFileSync (fs.js:1347:33)
+    at Object.createFileSync (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:34:6)
+    at Config.writeProjectFile (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:183:6)
+    at C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:27:19
+    at tryCatch (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:525:12)
+    at invokeCallback (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:538:13)
+    at publish (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:508:7)
+    at flush (C:\Users\BrianMartin\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:2415:5)
+[error] 
+[error] Error: An unexpected error has occurred.

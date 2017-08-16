@@ -11,6 +11,8 @@
 
   firebase.initializeApp(config);
 
+  //Create a variable to reference the database
+  var dataRef = firebase.database();
 
 //Add id for submit button.
 	$("#submit").on("click", function(event) {
