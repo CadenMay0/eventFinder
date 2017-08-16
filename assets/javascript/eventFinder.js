@@ -24,7 +24,7 @@ $("#submit").on("click", function (event) {
 function sqoot(done) {
     $("#dealsTBL").empty();
     $("#eventsTBL").empty();
-    var sqootUrl = "http://api.sqoot.com/v2/deals?api_key=" + sqootApi + "&location=" + zipCode + "&page=1";
+    var sqootUrl = "https://api.sqoot.com/v2/deals?api_key=" + sqootApi + "&location=" + zipCode + "&page=1";
     $.ajax({
         url: sqootUrl,
         method: "GET"
